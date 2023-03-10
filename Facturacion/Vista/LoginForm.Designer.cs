@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -119,6 +119,7 @@
             this.MostrarContraseñaButton.Size = new System.Drawing.Size(23, 23);
             this.MostrarContraseñaButton.TabIndex = 7;
             this.MostrarContraseñaButton.UseVisualStyleBackColor = false;
+            this.MostrarContraseñaButton.Click += new System.EventHandler(this.MostrarContraseñaButton_Click);
             // 
             // pictureBox1
             // 
