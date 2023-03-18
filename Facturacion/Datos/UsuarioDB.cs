@@ -45,7 +45,10 @@ namespace Datos
                             user.FechaCreacion = Convert.ToDateTime(dr["FechaCreacion"]); //convertir en datatime
                             user.EstadoActivo = Convert.ToBoolean(dr["EstaActivo"]); //convertir en boolean
                             //ponerlo de ultimo por imagen es null al principio
-                            user.Foto = (byte[])dr["Foto"]; //este es un arreglo de byte
+                            if (dr["Foto"].GetType() != typeof(DBNull)) //si tipo de dato es distinto de null
+                            {
+                                user.Foto = (byte[])dr["Foto"]; //este es un arreglo de byte
+                            }
                         }
                     }
                 } //al terminar la sentencia cierra la conexion
@@ -100,7 +103,6 @@ namespace Datos
             return inserto;
         }
 
-
         //METODO PARA EDITAR USUARIO
         public bool Editar(Usuario user)
         {
@@ -126,7 +128,6 @@ namespace Datos
                         comando.Parameters.Add("@Correo", MySqlDbType.VarChar, 45).Value = user.Correo;
                         comando.Parameters.Add("@Rol", MySqlDbType.VarChar, 20).Value = user.Rol;
                         comando.Parameters.Add("@Foto", MySqlDbType.LongBlob).Value = user.Foto;
-                        comando.Parameters.Add("@FechaCreacion", MySqlDbType.DateTime).Value = user.FechaCreacion;
                         comando.Parameters.Add("@EstaActivo", MySqlDbType.Bit).Value = user.EstadoActivo;
 
                         comando.ExecuteNonQuery(); //no vamos a ejecutar, no devuelve ningun registro 
@@ -206,6 +207,44 @@ namespace Datos
             return dt;
 
         }
+
+        //METODO PARA TRAER LA IMAGEN DEL USUARIO
+        public byte[] DevolverFoto(string codigoUsuario)
+        {
+            byte[] foto = new byte[0];
+
+            try //sentencia para capturar errores
+            {
+                //CODIGO PARA TRAER UN USUARIO Y VER SI EXISTE
+                //Sentencia SQL para traer los registros
+                StringBuilder sql = new StringBuilder();
+                sql.Append(" SELECT Foto FROM usuario WHERE CodigoUsuario = @CodigoUsuario"); //para traer todos los registros
+
+                using (MySqlConnection _conexion = new MySqlConnection(cadena)) //para cerrar la conexion a la base de datos
+                {
+                    _conexion.Open(); //abre la conexion
+                    using (MySqlCommand comando = new MySqlCommand(sql.ToString(), _conexion))
+                    {
+                        comando.CommandType = CommandType.Text; //sentencia de los parametros 
+                        comando.Parameters.Add("@CodigoUsuario", MySqlDbType.VarChar, 50).Value = codigoUsuario;
+                        MySqlDataReader dr = comando.ExecuteReader(); //DataRider
+
+                        //validacion si hay algo
+                        if (dr.Read())
+                        {
+                            foto = (byte[])dr["Foto"]; //le pasamos la foto
+                        }
+                    }
+                } //al terminar la sentencia cierra la conexion
+
+            }
+            catch (System.Exception ex) //aqui devuelve el error si existe
+            {
+
+            }
+            return foto;
+        }
+
 
 
     }

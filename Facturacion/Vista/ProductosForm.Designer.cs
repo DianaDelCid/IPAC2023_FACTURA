@@ -46,6 +46,8 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.ProductosDataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.EstaActivoCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -54,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 24);
+            this.label1.Location = new System.Drawing.Point(25, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 0;
@@ -63,7 +65,7 @@
             // CodigoTextBox
             // 
             this.CodigoTextBox.Enabled = false;
-            this.CodigoTextBox.Location = new System.Drawing.Point(116, 19);
+            this.CodigoTextBox.Location = new System.Drawing.Point(116, 16);
             this.CodigoTextBox.Name = "CodigoTextBox";
             this.CodigoTextBox.Size = new System.Drawing.Size(207, 22);
             this.CodigoTextBox.TabIndex = 1;
@@ -71,7 +73,7 @@
             // DescripcionTextBox
             // 
             this.DescripcionTextBox.Enabled = false;
-            this.DescripcionTextBox.Location = new System.Drawing.Point(116, 49);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(116, 46);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(207, 22);
             this.DescripcionTextBox.TabIndex = 3;
@@ -79,7 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 54);
+            this.label2.Location = new System.Drawing.Point(25, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 16);
             this.label2.TabIndex = 2;
@@ -88,7 +90,7 @@
             // ExistenciaTextBox
             // 
             this.ExistenciaTextBox.Enabled = false;
-            this.ExistenciaTextBox.Location = new System.Drawing.Point(116, 80);
+            this.ExistenciaTextBox.Location = new System.Drawing.Point(116, 77);
             this.ExistenciaTextBox.Name = "ExistenciaTextBox";
             this.ExistenciaTextBox.Size = new System.Drawing.Size(207, 22);
             this.ExistenciaTextBox.TabIndex = 5;
@@ -97,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 85);
+            this.label3.Location = new System.Drawing.Point(25, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 4;
@@ -106,7 +108,7 @@
             // PrecioTextBox
             // 
             this.PrecioTextBox.Enabled = false;
-            this.PrecioTextBox.Location = new System.Drawing.Point(116, 108);
+            this.PrecioTextBox.Location = new System.Drawing.Point(116, 105);
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(207, 22);
             this.PrecioTextBox.TabIndex = 7;
@@ -115,7 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 113);
+            this.label4.Location = new System.Drawing.Point(25, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 16);
             this.label4.TabIndex = 6;
@@ -124,7 +126,7 @@
             // ImagenPictureBox
             // 
             this.ImagenPictureBox.BackColor = System.Drawing.Color.White;
-            this.ImagenPictureBox.Location = new System.Drawing.Point(348, 19);
+            this.ImagenPictureBox.Location = new System.Drawing.Point(348, 16);
             this.ImagenPictureBox.Name = "ImagenPictureBox";
             this.ImagenPictureBox.Size = new System.Drawing.Size(147, 111);
             this.ImagenPictureBox.TabIndex = 8;
@@ -134,16 +136,17 @@
             // 
             this.AdjuntarImagenButton.Enabled = false;
             this.AdjuntarImagenButton.Image = global::Vista.Properties.Resources.buscar;
-            this.AdjuntarImagenButton.Location = new System.Drawing.Point(501, 98);
+            this.AdjuntarImagenButton.Location = new System.Drawing.Point(501, 95);
             this.AdjuntarImagenButton.Name = "AdjuntarImagenButton";
             this.AdjuntarImagenButton.Size = new System.Drawing.Size(36, 32);
             this.AdjuntarImagenButton.TabIndex = 9;
             this.AdjuntarImagenButton.UseVisualStyleBackColor = true;
+            this.AdjuntarImagenButton.Click += new System.EventHandler(this.AdjuntarImagenButton_Click);
             // 
             // CancelarButton
             // 
             this.CancelarButton.Enabled = false;
-            this.CancelarButton.Location = new System.Drawing.Point(416, 146);
+            this.CancelarButton.Location = new System.Drawing.Point(416, 167);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(75, 23);
             this.CancelarButton.TabIndex = 23;
@@ -153,18 +156,18 @@
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Enabled = false;
-            this.EliminarButton.Location = new System.Drawing.Point(335, 146);
+            this.EliminarButton.Location = new System.Drawing.Point(335, 167);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(75, 23);
             this.EliminarButton.TabIndex = 22;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
             this.GuardarButton.Enabled = false;
-            this.GuardarButton.Location = new System.Drawing.Point(254, 146);
+            this.GuardarButton.Location = new System.Drawing.Point(254, 167);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(75, 23);
             this.GuardarButton.TabIndex = 21;
@@ -174,8 +177,7 @@
             // 
             // ModificarButton
             // 
-            this.ModificarButton.Enabled = false;
-            this.ModificarButton.Location = new System.Drawing.Point(173, 146);
+            this.ModificarButton.Location = new System.Drawing.Point(173, 167);
             this.ModificarButton.Name = "ModificarButton";
             this.ModificarButton.Size = new System.Drawing.Size(75, 23);
             this.ModificarButton.TabIndex = 20;
@@ -185,7 +187,7 @@
             // 
             // NuevoButton
             // 
-            this.NuevoButton.Location = new System.Drawing.Point(92, 146);
+            this.NuevoButton.Location = new System.Drawing.Point(92, 167);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(75, 23);
             this.NuevoButton.TabIndex = 19;
@@ -195,21 +197,44 @@
             // 
             // ProductosDataGridView
             // 
+            this.ProductosDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProductosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductosDataGridView.Location = new System.Drawing.Point(-1, 179);
+            this.ProductosDataGridView.Location = new System.Drawing.Point(-1, 200);
             this.ProductosDataGridView.Name = "ProductosDataGridView";
-            this.ProductosDataGridView.Size = new System.Drawing.Size(584, 150);
+            this.ProductosDataGridView.Size = new System.Drawing.Size(584, 145);
             this.ProductosDataGridView.TabIndex = 24;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 140);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 16);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Esta Activo:";
+            // 
+            // EstaActivoCheckBox
+            // 
+            this.EstaActivoCheckBox.AutoSize = true;
+            this.EstaActivoCheckBox.Location = new System.Drawing.Point(116, 140);
+            this.EstaActivoCheckBox.Name = "EstaActivoCheckBox";
+            this.EstaActivoCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.EstaActivoCheckBox.TabIndex = 26;
+            this.EstaActivoCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ProductosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 329);
+            this.ClientSize = new System.Drawing.Size(583, 344);
+            this.Controls.Add(this.EstaActivoCheckBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.ProductosDataGridView);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.EliminarButton);
@@ -227,9 +252,10 @@
             this.Controls.Add(this.CodigoTextBox);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductosForm";
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.ProductosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImagenPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -257,5 +283,7 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.DataGridView ProductosDataGridView;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox EstaActivoCheckBox;
+        private System.Windows.Forms.Label label5;
     }
 }

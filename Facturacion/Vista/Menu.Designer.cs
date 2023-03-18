@@ -78,7 +78,7 @@
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem1;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem4;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(631, 136);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -219,9 +219,10 @@
             this.ClientesToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ClientesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ClientesToolStripButton.Name = "ClientesToolStripButton";
-            this.ClientesToolStripButton.Size = new System.Drawing.Size(55, 43);
+            this.ClientesToolStripButton.Size = new System.Drawing.Size(55, 53);
             this.ClientesToolStripButton.Text = "Clientes";
             this.ClientesToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ClientesToolStripButton.Click += new System.EventHandler(this.ClientesToolStripButton_Click);
             // 
             // toolStripTabItem4
             // 
@@ -253,7 +254,7 @@
             this.toolStripEx4.Office12Mode = false;
             this.toolStripEx4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx4.Size = new System.Drawing.Size(39, 70);
+            this.toolStripEx4.Size = new System.Drawing.Size(131, 70);
             this.toolStripEx4.TabIndex = 0;
             // 
             // NuevafacturaToolStripButton
@@ -263,9 +264,10 @@
             this.NuevafacturaToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NuevafacturaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NuevafacturaToolStripButton.Name = "NuevafacturaToolStripButton";
-            this.NuevafacturaToolStripButton.Size = new System.Drawing.Size(91, 43);
+            this.NuevafacturaToolStripButton.Size = new System.Drawing.Size(91, 53);
             this.NuevafacturaToolStripButton.Text = "Nueva Factura";
             this.NuevafacturaToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.NuevafacturaToolStripButton.Click += new System.EventHandler(this.NuevafacturaToolStripButton_Click);
             // 
             // Menu
             // 

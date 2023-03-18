@@ -24,5 +24,20 @@ namespace Vista
             productosForm.MdiParent = this;
             productosForm.Show();
         }
+
+        //Para traer el fomulario de clientes
+        private void ClientesToolStripButton_Click(object sender, EventArgs e)
+        {
+            ClientesForm clientesForm = new ClientesForm();
+            clientesForm.MdiParent = this;
+            clientesForm.Show();
+        }
+
+        private void NuevafacturaToolStripButton_Click(object sender, EventArgs e)
+        {
+            FacturaForm facturaForm = new FacturaForm();
+            facturaForm.MdiParent = this;
+            facturaForm.Show();
+        }
     }
 }

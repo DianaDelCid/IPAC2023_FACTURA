@@ -169,9 +169,9 @@
             // 
             this.AdjuntarFotoButton.Enabled = false;
             this.AdjuntarFotoButton.Image = global::Vista.Properties.Resources.buscar;
-            this.AdjuntarFotoButton.Location = new System.Drawing.Point(565, 145);
+            this.AdjuntarFotoButton.Location = new System.Drawing.Point(565, 141);
             this.AdjuntarFotoButton.Name = "AdjuntarFotoButton";
-            this.AdjuntarFotoButton.Size = new System.Drawing.Size(38, 31);
+            this.AdjuntarFotoButton.Size = new System.Drawing.Size(38, 35);
             this.AdjuntarFotoButton.TabIndex = 13;
             this.AdjuntarFotoButton.UseVisualStyleBackColor = true;
             this.AdjuntarFotoButton.Click += new System.EventHandler(this.AdjuntarFotoButton_Click);
@@ -219,13 +219,13 @@
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Enabled = false;
             this.EliminarButton.Location = new System.Drawing.Point(372, 219);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(75, 23);
             this.EliminarButton.TabIndex = 17;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // CancelarButton
             // 
@@ -242,6 +242,7 @@
             // 
             this.UsuariosDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.UsuariosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsuariosDataGridView.Location = new System.Drawing.Point(0, 257);
             this.UsuariosDataGridView.Name = "UsuariosDataGridView";
