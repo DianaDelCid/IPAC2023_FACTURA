@@ -17,6 +17,7 @@ namespace Entidades
         //Constructor vacio
         public Cliente()
         {
+
         }
 
         //Constructor con los parametros de las propiedades

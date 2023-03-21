@@ -257,7 +257,7 @@
             this.AbjuntarFotoButton.Image = global::Vista.Properties.Resources.buscar;
             this.AbjuntarFotoButton.Location = new System.Drawing.Point(541, 143);
             this.AbjuntarFotoButton.Name = "AbjuntarFotoButton";
-            this.AbjuntarFotoButton.Size = new System.Drawing.Size(37, 33);
+            this.AbjuntarFotoButton.Size = new System.Drawing.Size(34, 34);
             this.AbjuntarFotoButton.TabIndex = 30;
             this.AbjuntarFotoButton.UseVisualStyleBackColor = true;
             this.AbjuntarFotoButton.Click += new System.EventHandler(this.AbjuntarFotoButton_Click);

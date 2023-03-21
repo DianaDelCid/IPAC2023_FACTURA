@@ -186,7 +186,6 @@ namespace Datos
         }
 
 
-
         //METODO PARA DEVOLVER CLIENTE QUE SIRVE PARA FACTURA
         public Cliente DevolverClientePorIdentidad(string identidad)
         {
